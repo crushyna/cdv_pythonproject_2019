@@ -15,3 +15,6 @@ grupy 1-3 osobowe
 06.05.2019 - wybrany zbiór danych i przedmiot klasyfikacji
 21.06.2019 -  kod źródłowy (bitbucket/github) + raport opisujący przeprowadzone operacje, ich uzasadnienie oraz  analizę wyników (poprawność stworzonego modelu)
 sprawozdanie oraz kod projektu -  michal.zarnecki@cdv.pl (imię, nazwisko, tryb, semestr, specjalizacja, nr indeksu)
+
+Radosław Malinowski & Łukasz Kowalski
+CDV, informatyka niestacjonarne, 6 semestr
