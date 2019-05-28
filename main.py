@@ -1,17 +1,27 @@
 # quick_start ze zadanek nlp-tools
 import json
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 from src.nlp.text_processor import TextProcessor
 
 # plik źródłowy do analizy
 filename = "TA_restaurants_curated.csv"
 
 # przetworzenie danych wejściowych (csv -> dataframe)
-oryg_dataframe = pd.read_csv(filename)
-print(oryg_dataframe.info())
-print(oryg_dataframe.head())
+# wstępny podgląd danych
+oryg_dataframe = pd.read_csv(filename, index_col=0).dropna()
+#print(oryg_dataframe.info())
+#print(oryg_dataframe.head())
+#print(oryg_dataframe[['Number of Reviews', 'Reviews', 'Rating']].head())
 
 # klasyfikacja tekstu
+oryg_dataframe['text length'] = oryg_dataframe['Reviews'].apply(len)
+
+sns.set_style('white')
+g = sns.FacetGrid(oryg_dataframe ,col='Rating')
+g.map(plt.hist,'text length')
+plt.show()
 
 
 # normalizacja
