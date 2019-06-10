@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 import collections, re
 import numpy as np
 from src.nlp.text_processor import TextProcessor
-#from src.classification.bag_of_word_classifier import classify
 from src.classification.bag_of_word_classifier import classify2
 
 # plik źródłowy do analizy
 filename = "yelp.csv"
-test_review = "very average restaurant in this town. good food, but rather mediocre service."
+test_good_review = "very average restaurant in this town. good food, but rather mediocre service."
+test_bad_review = "never come back here, disgusting, fatal service"
 
 # przetworzenie danych wejściowych (csv -> dataframe)
 oryg_dataframe = pd.read_csv(filename).dropna()
@@ -21,20 +21,24 @@ oryg_dataframe = pd.read_csv(filename).dropna()
 #print(oryg_dataframe[['stars', 'text']].head())
 reviews_and_stars = oryg_dataframe[['text', 'stars']]
 
-# klasyfikacja tekstu
+# zestawy recenzji + oceny do klasyfikacji
 five_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 5)]
 four_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 4)]
 three_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 3)]
 two_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 2)]
 one_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 1)]
 
-# bag-of-words dla ocen 5
+# testowy bag-of-words dla ocen = 3
 #print(five_stars_reviews[['text']])
-classify2(test_review)
+#print(classify2(test_bad_review))
+for index, each_review in five_stars_reviews[['text']].itertuples():
+  print(classify2(each_review.lower()))
 
-#for each_review in five_stars_reviews[['text']]:
-  #print(five_stars_reviews[each_review])
- # classify(five_stars_reviews[each_review])
+
+# procesowanie tektsu, lematyzacja, normalizacja
+
+
+# naive bayes - klasyfikator 1
 
 '''
 #print(five_stars_reviews['text'])
