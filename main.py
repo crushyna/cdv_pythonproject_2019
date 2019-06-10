@@ -5,9 +5,12 @@ import matplotlib.pyplot as plt
 import collections, re
 import numpy as np
 from src.nlp.text_processor import TextProcessor
+#from src.classification.bag_of_word_classifier import classify
+from src.classification.bag_of_word_classifier import classify2
 
 # plik źródłowy do analizy
 filename = "yelp.csv"
+test_review = "very average restaurant in this town. good food, but rather mediocre service."
 
 # przetworzenie danych wejściowych (csv -> dataframe)
 oryg_dataframe = pd.read_csv(filename).dropna()
@@ -26,6 +29,14 @@ two_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 2)]
 one_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 1)]
 
 # bag-of-words dla ocen 5
+#print(five_stars_reviews[['text']])
+classify2(test_review)
+
+#for each_review in five_stars_reviews[['text']]:
+  #print(five_stars_reviews[each_review])
+ # classify(five_stars_reviews[each_review])
+
+'''
 #print(five_stars_reviews['text'])
 #five_text_array = np.asarray(five_stars_reviews['text'])
 #five_bagsofwords = [collections.Counter(re.findall(r'\w+', txt)) for txt in five_text_array]
@@ -69,7 +80,7 @@ accuracy = accuracy_score(y_test, y_pred)
 print(cm)
 print(cr)
 print(accuracy)
-
+'''
 '''
 oryg_dataframe['text length'] = oryg_dataframe['Reviews'].apply(len)
 
@@ -81,7 +92,8 @@ plt.show()
 
 # normalizacja
 
-'''with open(filename, 'r') as myfile:
+'''
+with open(filename, 'r') as myfile:
   data = myfile.read()
   
 result = TextProcessor().normalize(data)
