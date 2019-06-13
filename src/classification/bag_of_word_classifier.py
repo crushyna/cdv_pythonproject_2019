@@ -5,11 +5,11 @@ import regex as re
 from collections import defaultdict
 
 categories = [
-  ('cat5', ['great', 'awesome', 'best', 'original', 'recommend', 'always', 'fabolous', 'love', 'favourite', 'excellent', 'amazing', 'favourite']),
-  ('cat4', ['good', 'nice', 'stylish', 'recommend', 'cute', 'but', 'great', 'specific']),
-  ('cat3', ['average', 'typical', 'mediocre', 'medium', 'but', 'casual', 'specific', 'skip', 'small', 'typical', 'not']),
-  ('cat2', ['bad', 'wrong', 'but',  "don't", 'rude', 'skip', 'small', 'not', 'terrible', 'if']),
-  ('cat1', ['fatal', 'disgusting', 'bad', "don't", 'never', 'worst', 'awful', 'disaster', 'disastrous', 'terrible', 'unaccteptable', 'rude'])
+  ('5', ['great', 'awesome', 'best', 'original', 'recommend', 'always', 'fabolous', 'love', 'favourite', 'excellent', 'amazing', 'favourite']),
+  ('4', ['good', 'nice', 'stylish', 'recommend', 'cute', 'but', 'great', 'specific']),
+  ('3', ['average', 'typical', 'mediocre', 'medium', 'but', 'casual', 'specific', 'skip', 'small', 'typical', 'not']),
+  ('2', ['bad', 'wrong', 'but',  "don't", 'rude', 'skip', 'small', 'not', 'terrible', 'if']),
+  ('1', ['fatal', 'disgusting', 'bad', "don't", 'never', 'worst', 'awful', 'disaster', 'disastrous', 'terrible', 'unaccteptable', 'rude'])
 ]
 
 def classify2(data):
@@ -46,4 +46,4 @@ def classify2(data):
     results_dictionary = dict(zip(review_note, ratio_values))
 
     # return result here
-    return(max(results_dictionary, key=results_dictionary.get))
+    return(int(max(results_dictionary, key=results_dictionary.get)))

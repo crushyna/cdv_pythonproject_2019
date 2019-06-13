@@ -1,4 +1,4 @@
-import json
+#import json
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -18,7 +18,6 @@ oryg_dataframe = pd.read_csv(filename).dropna()
 # wstępny podgląd danych
 #print(oryg_dataframe.info())
 #print(oryg_dataframe.head())
-#print(oryg_dataframe[['stars', 'text']].head())
 reviews_and_stars = oryg_dataframe[['text', 'stars']]
 
 # zestawy recenzji + oceny do klasyfikacji
@@ -28,11 +27,22 @@ three_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 3)]
 two_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 2)]
 one_stars_reviews = reviews_and_stars.loc[(reviews_and_stars['stars'] == 1)]
 
-# testowy bag-of-words dla ocen = 3
+#testowy bag-of-words dla ocen = 3
 #print(five_stars_reviews[['text']])
 #print(classify2(test_bad_review))
-for index, each_review in five_stars_reviews[['text']].itertuples():
-  print(classify2(each_review.lower()))
+
+
+# klasyfikaca naszym zestawem
+our_classification = []
+for index, each_review in reviews_and_stars[['text']].itertuples():
+  our_classification.append(classify2(each_review.lower()))
+
+reviews_and_stars['our_classification'] = our_classification
+reviews_and_stars['guessed_ok'] = np.where(reviews_and_stars['stars'] == reviews_and_stars['our_classification'], 1, 0)
+
+classification_ratio = ((reviews_and_stars['guessed_ok'].sum()) / (len(reviews_and_stars.index))) * 100
+print("Classification ratio: ")
+print(classification_ratio)
 
 
 # procesowanie tektsu, lematyzacja, normalizacja
