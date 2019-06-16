@@ -2,11 +2,11 @@
 Python semestral project 2019
 
 Zadanie: Napisz program, który:
-1. Przetworzy dane tekstowe w języku naturalnym
+1. Przetworzy dane tekstowe w języku naturalnym [OK]
 Zbiór danych pobierz ze strony https://www.kaggle.com/datasets
-2. Dokona klasyfikacji stosując wyrażenia regularne
-3. Przeprowadzi normalizację tekstu (usunięcie niepotrzebnych znaków, stop words ,lematyzacja, ...)
-4. Dokona wektoryzacji tekstu (TF-IDF)
+2. Dokona klasyfikacji stosując wyrażenia regularne [OK]
+3. Przeprowadzi normalizację tekstu (usunięcie niepotrzebnych znaków, stop words ,lematyzacja, ...) [OK]
+4. Dokona wektoryzacji tekstu (TF-IDF) [OK]
 5. Na podstawie przetworzonych danych utworzy model klasyfikujący dane (wykorzystanie min. 3 różnych klasyfikatorów, dopasowanie parametrów algorytmów, sprawdzenie poprawności przewidywanych wyników)
 6. Porówna wyniki otrzymane za pomocą parsowania wyrażeniami regularnymi ze skutecznością modelu uczenia maszynowego
 

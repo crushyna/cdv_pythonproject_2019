@@ -1,3 +1,5 @@
+import regex as re
+
 class PunctuationRemover:
     def process(self, data):
-        return data.replace('[^\w\s]', '')
+        return re.sub(r'[^\w\s]', ' ', data)
