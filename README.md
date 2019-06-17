@@ -7,7 +7,7 @@ Zbiór danych pobierz ze strony https://www.kaggle.com/datasets
 2. Dokona klasyfikacji stosując wyrażenia regularne [OK]
 3. Przeprowadzi normalizację tekstu (usunięcie niepotrzebnych znaków, stop words ,lematyzacja, ...) [OK]
 4. Dokona wektoryzacji tekstu (TF-IDF) [OK]
-5. Na podstawie przetworzonych danych utworzy model klasyfikujący dane (wykorzystanie min. 3 różnych klasyfikatorów, dopasowanie parametrów algorytmów, sprawdzenie poprawności przewidywanych wyników)
+5. Na podstawie przetworzonych danych utworzy model klasyfikujący dane (wykorzystanie min. 3 różnych klasyfikatorów, dopasowanie parametrów algorytmów, sprawdzenie poprawności przewidywanych wyników) [OK]
 6. Porówna wyniki otrzymane za pomocą parsowania wyrażeniami regularnymi ze skutecznością modelu uczenia maszynowego
 
 Forma realizacji: 
